@@ -1,0 +1,482 @@
+@import 'nullstyle.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+   font-family: 'Roboto', sans-serif;
+   font-weight: 400;
+   color: rgb(41, 0, 68);
+}
+
+/*---------Общие классы--------*/
+
+.wrapper {
+}
+
+._container {
+   padding: 0 150px;
+   max-width: 1440px;
+   margin: 0 auto;
+   @media (max-width: 1023px) {
+      padding: 0 110px;
+   }
+   @media (max-width: 767px) {
+      padding: 0 60px;
+   }
+   @media (max-width: 479px) {
+      padding: 0 20px;
+   }
+}
+
+.title {
+   font-size: 40px;
+   font-weight: 700;
+   text-align: center;
+   line-height: 133%;
+}
+
+.subtitle {
+   font-size: 32px;
+   color: rgb(28, 0, 46);
+   text-align: center;
+   line-height: 133%;
+}
+
+.background-violet {
+   background: #d2c1ff;
+   background: -moz-linear-gradient(-20deg,  #d2c1ff 0%, #9a8eff 26%, #edbcff 50%, #c3bfff 76%, #bda5ff 100%);
+   background: -webkit-linear-gradient(-20deg,  #d2c1ff 0%,#9a8eff 26%,#edbcff 50%,#c3bfff 76%,#bda5ff 100%);
+   background: linear-gradient(160deg,  #d2c1ff 0%,#9a8eff 26%,#edbcff 50%,#c3bfff 76%,#bda5ff 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2c1ff', endColorstr='#bda5ff',GradientType=1 );
+}
+
+/*-------------Основные блоки----------*/
+
+/*--------------Первый блок-----------*/
+.header {
+   position: relative;
+   z-index: 2;
+	&__menu {
+      position: relative;
+   }
+   &__container {}
+}
+
+.menu {
+	&__row {
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 800px;
+      @media (max-width: 1023px) {
+         max-width: 900px;
+      }
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      @media (max-width: 767px) {
+         display: inline-block;
+         position: fixed;
+         top: -100%;
+         left: 0px;
+         width: 100%;
+         height: 100%;
+         background-color: white;
+         padding-left: 30px;
+         padding-top: 40px;
+      }
+      &_active {
+         @media (max-width: 767px) {
+            top: 0;
+         }
+      }
+   }
+	&__item {
+      
+      transition: all .3s ease 0s;
+      &:hover {
+         margin: -20px;
+      }
+      a {
+         color: innerit;
+         font-size: 20px;
+         font-weight: 700;
+         text-transform: uppercase;
+         transition: all .3s ease 0s;
+         &:hover {
+            color: rgb(191, 96, 255);
+            padding: 20px;
+            background-color: rgb(41, 0, 68);
+            border-radius: 30px;
+         }
+         @media (max-width: 767px) {
+            &:hover {
+               color: none;
+               padding: none;
+               background-color: none;
+               border-radius: none;
+            }
+         }
+      }
+      @media (max-width: 767px) {
+         &:not(:last-child) {
+            margin-bottom: 20px;
+         }
+         
+      }
+   }
+}
+
+/*-------------------Product------------------*/
+
+.product {
+   position: relative;
+   &__video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0.7;
+   }
+   &__videobody {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      video {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+   &__body {
+      position: relative;
+      z-index: 1;
+      padding: 140px 0;
+      @media (max-width: 1023px) {
+         padding: 110px 0;
+      }
+      @media (max-width: 767px) {
+         padding: 80px 0;
+      }
+      @media (max-width: 479px) {
+         padding: 50px 0;
+      }
+   }
+   &__container {
+   }
+   &__title {
+      margin-bottom: 20px;
+   }
+   &__subtitle {
+      margin-bottom: 60px;
+   }
+   &__row {
+      display: flex;
+      margin: 0 -30px;
+      flex-wrap: wrap;
+   }
+   &__image {
+      flex: 0 1 40%;
+      padding: 0 30px;
+      img {
+         width: 100%;
+         height: 100%;
+      }
+      @media (max-width: 1023px) {
+         flex: 0 1 50%;
+      }
+      @media (max-width: 767px) {
+         flex: 0 1 400px;
+         margin: 0 auto;
+      }
+      
+   }
+   &__list {
+      flex: 0 1 60%;
+      padding: 0 30px;
+      @media (max-width: 1023px) {
+         flex: 0 1 50%;
+      }
+      @media (max-width: 767px) {
+         flex: 0 1 100%;
+         text-align: center;
+      }
+   }
+   &__item {
+      font-size: 30px;
+      line-height: 130%;
+      font-weight: 700;
+      &:not(:last-child) {
+         margin-bottom: 30px;
+         margin-top: 20px;
+      }
+   }
+}
+
+/*-------Бургер------*/
+
+.burger {
+   display: none;
+   @media (max-width: 767px) {
+      display: block;
+   }
+   position: absolute;
+   width: 30px;
+   height: 20px;
+   top: 40px;
+   right: 0;
+   z-index: 3;
+   span {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: rgb(41, 0, 68);
+      transition: width 0.3s ease 0s;
+   }
+   &::before {
+      content: '';
+      width: 100%;
+      height: 4px;
+      background-color: rgb(41, 0, 68);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: transform 0.3s ease 0s, top 0.3s ease 0s;
+   }
+   &::after {
+      content: '';
+      width: 100%;
+      height: 4px;
+      background-color: rgb(41, 0, 68);
+      position: absolute;
+      bottom: 0;
+      left: 0;      
+      transition: transform 0.3s ease 0s, bottom 0.3s ease 0s;
+   }
+   &_active {
+      span {
+         width: 0;
+      }
+      &::before {
+         transform: rotate(45deg);
+         top: 8px;
+      }
+      &::after {
+         transform: rotate(-45deg);
+         bottom: 8px;
+      }
+   }
+}
+
+/*--------------Состав продукта----------------*/
+
+.compound {
+   padding: 140px 0;
+   @media (max-width: 1023px) {
+      padding: 110px 0;
+   }
+   @media (max-width: 767px) {
+      padding: 80px 0;
+   }
+   @media (max-width: 479px) {
+      padding: 50px 0;
+   }
+   &__container {}
+   &__title {
+      margin-bottom: 20px;
+   }
+   &__subtitle {
+      margin-bottom: 60px;
+   }
+   &__body {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 0 -50px;
+      @media (max-width: 1023px) {
+         margin: 0 -30px;
+      }
+      @media (max-width: 479px) {
+         margin: 0;
+      }
+   }
+   &__column {
+      padding: 0 50px;
+      flex: 0 1 33.3333%;
+      display: flex;
+      &:not(:nth-child(2)) {        
+         flex-direction: column;
+         justify-content: space-between;
+      }
+      &:nth-child(2) {
+         align-items: center;
+         justify-content: center;
+      }
+      @media (max-width: 1023px) {
+         padding: 0 30px;
+         flex: 0 1 50%;
+         flex-direction: row;
+         &:nth-child(1) {
+            order: 1;
+         }
+         &:nth-child(2) {
+            order: 3;
+            flex: 0 1 100%;
+         }
+         &:nth-child(3) {
+            order: 2;
+         }
+      }
+      @media (max-width: 599px) {
+         flex: 0 1 100%;
+         &:not(:last-child) {
+            margin-bottom: 40px;
+         }
+      }
+      @media (max-width: 479px) {
+         padding: 0;
+      }
+   }
+   &__item {
+      padding: 20px;
+      &:not(:last-child) {
+         margin-bottom: 120px;
+      }
+      background-color: rgb(194, 130, 255);
+      border: 2px solid rgb(41, 0, 68);
+      border-radius: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      @media (max-width: 1023px) {
+         &:not(:last-child) {
+            margin-bottom: 40px;
+         }
+      }
+   }
+   &__image {
+      margin: 0 auto;
+      flex: 0 1 200px;
+      border-radius: 100px;
+      img {
+         width: 100%;
+         height: 100%;
+         border-radius: 75px;
+      }
+   }
+   &__name {
+      font-size: 28px;
+      flex: 0 1 100%;
+      text-align: center;
+      margin-top: 30px;
+      margin: 30px auto 0 auto;
+   }
+   &__product {
+      background-color: rgb(41, 0, 68);
+      padding: 30px;
+      border-radius: 20px;
+      flex: 0 1 200px;
+      @media (max-width: 1023px) {
+         margin-top: 20px;
+      }
+      img {
+         width: 100%;
+         height: 100%;
+      }
+   }
+}
+
+/*-------------Карусель--------------*/
+
+.carousel {
+   padding: 140px 0;
+   @media (max-width: 1023px) {
+      padding: 110px 0;
+   }
+   @media (max-width: 767px) {
+      padding: 80px 0;
+   }
+   @media (max-width: 479px) {
+      padding: 50px 0;
+   }
+   &__container {}
+   &__title {
+      margin-bottom: 20px;
+   }
+   &__subtitle {
+      margin-bottom: 60px;
+   }
+   &__left-button {
+      display: inline-block;
+      font-size: 30px;
+      padding: 20px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 2;
+   }
+   &__right-button {
+      display: inline-block;
+      font-size: 30px;
+      padding: 20px;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      z-index: 2;
+   }
+   &__hidder {
+      display: flex;
+      width: 300px;
+      overflow: hidden;
+      position: relative;
+      margin: 0 auto;
+      border: 2px solid rgb(41, 0, 68);
+      border-radius: 20px;
+   }
+   &__body {
+      display: flex;
+      position: relative;
+      left: 0;
+      width: 100%;
+   }
+   &__item {
+      flex: 0 0 100%;
+   }
+}
+
+.item-carousel {
+   max-width: 300px;
+   background-color: rgb(194, 130, 255);
+   padding: 20px;
+   box-sizing: border-box;
+   &:not(:last-child) {
+   }
+   display: flex;
+   align-items: flex-end;
+   flex-wrap: wrap;
+   &__photo {
+      flex: 0 1 200px;
+      margin: 0 auto;
+      img {
+         width: 100%;
+         height: 100%;
+         border-radius: 50%;
+      }
+   }
+   &__text {
+      flex: 0 1 100%;
+   }
+   &__name {
+      font-size: 30px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+   }
+   &__review {
+      font-size: 20px;
+      text-align: center;
+   }
+}
