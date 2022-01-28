@@ -1,4 +1,6 @@
+"use strict";
 $('document').ready(function () {
+   // Переменные для карусели
    let leftButton = $('.carousel__left-button');
    let rightButton = $('.carousel__right-button');
    let step = 100;
@@ -8,12 +10,18 @@ $('document').ready(function () {
    console.log(maxCounter);
    let minCounter = 0;
 
+   // Переменные для таймера
+   let timer = $('.buy__time');
+
+   // Скрипт для бургера
    $('.burger').click(function (event) {
       $('.menu__row').toggleClass('menu__row_active');
       $('.burger').toggleClass('burger_active');
    });
 
 
+
+   // Скрипт для карусели
    $('.carousel__left-button').click(function (event) {
       if (counter != 0) {
          counter += step;
@@ -33,4 +41,47 @@ $('document').ready(function () {
          itemsList.animate({ left : counter + "%"}, 500);
       }
    });
+
+
+
+   // Скрипт для таймера
+   let znach;
+   let time = '30:00';
+   let i = 30;
+   let j = 0;
+   countdown ();
+   function countdown() {
+      timer.html(time);
+      if (i == 0 & j == 0) {
+         clearTimeout(countdown);
+      } else if (i == 0 & j > 0) {
+         --j;
+         if (j < 10) {
+            time = i + ':0' + j;
+         } else {
+            time = i + ':' + j;
+         }
+         setTimeout(countdown, 1000);
+      } else if (i > 0 & j == 0) {
+         --i;
+         j = 59;
+         if (j < 10) {
+            time = i + ':0' + j;
+         } else {
+            time = i + ':' + j;
+         }
+         setTimeout(countdown, 1000);
+      } else if (i > 0 & j > 0) {
+         --j;
+         if (j < 10) {
+            time = i + ':0' + j;
+         } else {
+            time = i + ':' + j;
+         }
+         setTimeout(countdown, 1000);
+      };
+   }
+   //Скрипт для всплывающего окна
+   
+
 });

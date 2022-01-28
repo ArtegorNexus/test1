@@ -16,23 +16,22 @@
             </div>
          </div>
          <header class="header">
-            <div class="header__container _container">
-               
+            <div class="header__container _container">         
                <div class="header__menu menu">
                   <div class="burger">
                      <span></span>
                   </div>
                   <ul class="menu__row">
-                     <li class="menu__item"><a href="#">Начало</a></li>
-                     <li class="menu__item"><a href="#">Состав</a></li>
-                     <li class="menu__item"><a href="#">Отзывы</a></li>
-                     <li class="menu__item"><a href="#">Характеристики</a></li>
-                     <li class="menu__item"><a href="#">Заказать</a></li>
+                     <li class="menu__item"><a href="#product">Начало</a></li>
+                     <li class="menu__item"><a href="#compound">Состав</a></li>
+                     <li class="menu__item"><a href="#reviews">Отзывы</a></li>
+                     <li class="menu__item"><a href="#man">Мнение</a></li>
+                     <li class="menu__item"><a href="#buy">Заказать</a></li>
                   </ul>
                </div>
             </div>
          </header>
-         <div class="product__body">
+         <div class="product__body" id="product">
             <div class="product__container _container">
                <div class="product__title title">LevelUp. <br> Лучшее средство для повышения потенции</div>
                <div class="product__subtitle subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, distinctio!</div>
@@ -46,10 +45,11 @@
                      <div class="product__item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, doloremque.</div>
                   </div>
                </div>
+               <button class="buy-button">заказать</button>
             </div>
          </div>
       </div>
-      <div class="compound background-violet">
+      <div class="compound background-violet" id="compound">
          <div class="compound__container _container">
             <div class="compound__title title">Состав</div>
             <div class="compound__subtitle subtitle">В новейшем продукте новейшие составляющие</div>
@@ -100,15 +100,16 @@
                   </div>
                </div>
             </div>
+            <button class="buy-button">заказать</button>
          </div>
       </div>
-      <div class="carousel background-violet">
+      <div class="carousel background-violet" id="reviews">
          <div class="carousel__container _container">
             <div class="carousel__title title">Наши отзывы</div>
             <div class="carousel__subtitle subtitle">Здесь представлены отзывы наших клиентов</div>
             <div class="carousel__hidder">
-               <button class="carousel__left-button" type="button">Left</button>
-               <button class="carousel__right-button" type="button">Right</button>
+               <button class="carousel__left-button" type="button">&#10094;</button>
+               <button class="carousel__right-button" type="button">&#10095;</button>
                <div class="carousel__body">
                   <div class="carousel__item item-carousel">
                      <div class="item-carousel__photo">
@@ -156,6 +157,57 @@
                      </div>
                   </div>
                </div>
+            </div>
+         </div>
+      </div>
+      <div class="man background-violet" id="man">
+         <div class="man__container _container">
+            <div class="man__body">
+               <div class="man__title title">Мнение эксперта</div>
+               <div class="man__subtitle subtitle">Вот мнение настоящего эксперта</div>
+               <div class="man__row">
+                  <div class="man__image">
+                     <img src="images/doctor.png" alt="doctor">
+                  </div>
+                  <div class="man__benefits">
+                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, incidunt?</p>
+                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, sint amet. Libero quaerat corrupti eos explicabo! Tempore blanditiis mollitia odio.</p>
+                  </div>
+               </div>
+               <ul class="man__list">
+                  <li class="man__item">Стойкость</li>
+                  <li class="man__item">Продолжительность</li>
+                  <li class="man__item">Помощь</li>
+               </ul>
+               <button class="buy-button">заказать</button>
+            </div>
+         </div>
+      </div>
+      <div class="buy background-violet" id="buy">
+         <div class="buy__container _container">
+            <div class="buy__body">
+               <div class="buy__title title">LevelUp</div>
+               <div class="buy__subtitle subtitle">Закажите прямо сейчас по новой цене!</div>
+               <div class="buy__time"><p>30:00</p></div>
+               <div class="buy__product-image">
+                  <img src="images/prod.png" alt="prod">
+               </div>
+               <div class="buy__prices">
+                  <div class="buy__prices_old">1 990 р.</div>
+                  <div class="buy__prices_new">990 р.</div>
+               </div>
+               <form action="post" class="buy__form form">
+                  <div class="form__name">
+                     <input id="name" type="text" placeholder="Ваше имя">
+                     <label for="name">Введите ваше имя. Пример: Андрей</label>
+                  </div>
+                  <div class="form__phone">
+                     <input id="number" type="number" placeholder="Ваш номер телефона">
+                     <label for="number">Введите ваш номер. Пример: +79992222229</label>
+                  </div>
+                  <button class="form__button">ЗАКАЗАТЬ</button>
+               </form>
             </div>
          </div>
       </div>
