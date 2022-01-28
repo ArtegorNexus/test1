@@ -10,7 +10,9 @@ body {
 }
 
 /*---------Общие классы--------*/
-
+.lock {
+   overflow: hidden;
+}
 .wrapper {
 }
 .buy-button {
@@ -723,7 +725,7 @@ body {
          }
          @media (max-width: 479px) {
             font-size: 20px;
-            padding: 10px;
+            padding: 25px 20px;
          }  
       }
    }
@@ -751,6 +753,9 @@ body {
          align-items: center;
          justify-content: center;
          opacity: 0;
+         @media (max-width: 479px) {
+            top: -44px;
+         }  
       }
    }
    &__phone {
@@ -768,7 +773,10 @@ body {
          display: flex;
          align-items: center;
          justify-content: center;
-         opacity: 0
+         opacity: 0;
+         @media (max-width: 479px) {
+            top: -54px;
+         } 
       }        
       input {
          &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {

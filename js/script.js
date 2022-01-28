@@ -17,6 +17,7 @@ $('document').ready(function () {
    $('.burger').click(function (event) {
       $('.menu__row').toggleClass('menu__row_active');
       $('.burger').toggleClass('burger_active');
+      $('body').toggleClass('lock');
    });
 
 

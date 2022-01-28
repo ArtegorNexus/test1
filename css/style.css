@@ -85,6 +85,10 @@ body {
 }
 
 /*---------Общие классы--------*/
+.lock {
+  overflow: hidden;
+}
+
 .buy-button {
   padding: 20px 0 15px 0;
   font-size: 30px;
@@ -1005,7 +1009,7 @@ body {
 @media (max-width: 479px) {
   .form > * input {
     font-size: 20px;
-    padding: 10px;
+    padding: 25px 20px;
   }
 }
 .form__name {
@@ -1035,6 +1039,11 @@ body {
           justify-content: center;
   opacity: 0;
 }
+@media (max-width: 479px) {
+  .form__name label {
+    top: -44px;
+  }
+}
 .form__phone {
   position: relative;
 }
@@ -1058,6 +1067,11 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   opacity: 0;
+}
+@media (max-width: 479px) {
+  .form__phone label {
+    top: -54px;
+  }
 }
 .form__phone input {
   -moz-appearance: textfield;
